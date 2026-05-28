@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parabrisas Arana | Cristales para Camiones y Flotas — Zona Oeste GBA</title>
+  <meta name="description" content="Especialistas en parabrisas y cristales para camiones, flotas y transporte. 50 años de experiencia. 3 sucursales en Zona Oeste. Servicio a domicilio en tu depósito. Instalamos Pilkington con garantía." />
+
+  <!-- Open Graph para Meta Ads -->
+  <meta property="og:title" content="Parabrisas Arana | Tu flota no puede esperar" />
+  <meta property="og:description" content="Parabrisas para camiones y flotas. Zona Oeste. Servicio a domicilio. 50 años de trayectoria. Cristales Pilkington con garantía." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:        #1A2F5A;
+      --azul-medio:  #1E3A6E;
+      --azul-claro:  #2563EB;
+      --rojo:        #D92B2B;
+      --rojo-oscuro: #B71C1C;
+      --blanco:      #FFFFFF;
+      --gris-claro:  #F4F6FA;
+      --gris-medio:  #E2E8F0;
+      --gris-texto:  #64748B;
+      --negro:       #0F172A;
+      --verde-wa:    #25D366;
+      --verde-wa-hover: #1DA851;
+      --font:        'Poppins', sans-serif;
+      --radius:      12px;
+      --shadow:      0 4px 24px rgba(0,0,0,0.10);
+      --shadow-lg:   0 8px 40px rgba(0,0,0,0.18);
+      --transition:  0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--negro);
+      background: var(--blanco);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =============================================
+       ANIMACIONES DE ENTRADA
+    ============================================= */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+
+    /* =============================================
+       TOP URGENCY BANNER
+    ============================================= */
+    #urgency-banner {
+      background: var(--rojo);
+      color: var(--blanco);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 100;
+    }
+    #urgency-banner span {
+      margin: 0 8px;
+      opacity: 0.7;
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    #navbar {
+      background: var(--azul);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--blanco); }
+
+    .btn-nav-wa {
+      background: var(--verde-wa);
+      color: var(--blanco) !important;
+      font-weight: 700 !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background var(--transition), transform var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+    .btn-nav-wa:hover {
+      background: var(--verde-wa-hover);
+      transform: scale(1.04);
+    }
+
+    /* Hamburguesa mobile */
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      flex-direction: column;
+      gap: 5px;
+    }
+    #menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--blanco);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--azul-medio);
+      padding: 16px 24px 24px;
+    }
+    #mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      padding: 12px 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    #mobile-menu a:last-child { border-bottom: none; }
+    #mobile-menu .btn-nav-wa {
+      margin-top: 16px;
+      justify-content: center;
+      padding: 14px;
+      font-size: 1rem;
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(26,47,90,0.93) 0%, rgba(26,47,90,0.75) 60%, rgba(217,43,43,0.3) 100%),
+        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    /* Líneas decorativas */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 80px,
+          rgba(255,255,255,0.015) 80px,
+          rgba(255,255,255,0.015) 81px
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 0 60px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(217,43,43,0.18);
+      border: 1px solid rgba(217,43,43,0.5);
+      color: #FF6B6B;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #FF6B6B;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    #hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      color: var(--blanco);
+      line-height: 1.1;
+      max-width: 740px;
+      margin-bottom: 20px;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: #FF6B6B;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      background: var(--verde-wa);
+      color: var(--blanco);
+      font-family: var(--font);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--verde-wa-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--blanco);
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 28px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover {
+      border-color: var(--blanco);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--blanco);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .badge-icon {
+      font-size: 1rem;
+    }
+
+    /* =============================================
+       PAIN POINTS
+    ============================================= */
+    #pain {
+      background: var(--negro);
+      padding: 72px 0;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .pain-card:hover {
+      border-color: rgba(217,43,43,0.4);
+      transform: translateY(-4px);
+    }
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--rojo);
+    }
+    .pain-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+    .pain-card h3 {
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pain-card p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .pain-solution {
+      color: #4ADE80 !important;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* =============================================
+       NOSOTROS / STATS
+    ============================================= */
+    #nosotros {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rojo);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--azul);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gris-texto);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .nosotros-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .stat-card {
+      background: var(--gris-claro);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      border-left: 4px solid var(--rojo);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .stat-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--azul);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-desc {
+      font-size: 0.82rem;
+      color: var(--gris-texto);
+      font-weight: 500;
+    }
+
+    .nosotros-visual {
+      position: relative;
+    }
+    .nosotros-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .nosotros-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+    .pilkington-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+    .pilkington-badge .badge-icon-lg {
+      font-size: 2rem;
+    }
+    .pilkington-badge strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--azul);
+    }
+    .pilkington-badge span {
+      font-size: 0.75rem;
+      color: var(--gris-texto);
+    }
+
+    /* =============================================
+       SERVICIOS
+    ============================================= */
+    #servicios {
+      padding: 88px 0;
+      background: var(--gris-claro);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header .section-sub {
+      margin: 0 auto;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .servicio-card {
+      background: var(--blanco);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .servicio-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--rojo), var(--azul-claro));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .servicio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .servicio-card:hover::after { transform: scaleX(1); }
+
+    .servicio-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+    .servicio-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+    .servicio-card p {
+      font-size: 0.875rem;
+      color: var(--gris-texto);
+      line-height: 1.65;
+    }
+
+    /* =============================================
+       B2B — EMPRESAS DE TRANSPORTE
+    ============================================= */
+    #empresas {
+      padding: 96px 0;
+      background: linear-gradient(135deg, var(--azul) 0%, #0F1F3D 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #empresas::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(217,43,43,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #empresas::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .empresas-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .empresas-content .section-title {
+      color: var(--blanco);
+    }
+    .empresas-content .section-sub {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+    }
+    .empresas-quote {
+      background: rgba(217,43,43,0.15);
+      border-left: 4px solid var(--rojo);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #FF8080;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .feature-list li::before {
+      content: '✓';
+      background: var(--rojo);
+      color: var(--blanco);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-cta-rojo {
+      background: var(--rojo);
+      color: var(--blanco);
+      font-family: var(--font);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(217,43,43,0.4);
+    }
+    .btn-cta-rojo:hover {
+      background: var(--rojo-oscuro);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(217,43,43,0.5);
+    }
+
+    .empresas-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .ef-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .ef-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+    .ef-icon { font-size: 2rem; margin-bottom: 12px; }
+    .ef-card h4 {
+      color: var(--blanco);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .ef-card p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       B2C — PARTICULARES
+    ============================================= */
+    #particulares {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+    .particulares-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .pasos {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 32px 0;
+    }
+    .paso {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+    .paso:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 44px;
+      width: 2px;
+      height: calc(100% - 4px);
+      background: linear-gradient(to bottom, var(--azul), var(--gris-medio));
+    }
+    .paso-num {
+      width: 40px;
+      height: 40px;
+      background: var(--azul);
+      color: var(--blanco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .paso-text {
+      padding-bottom: 32px;
+    }
+    .paso-text h4 {
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+    .paso-text p {
+      color: var(--gris-texto);
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .particulares-visual {
+      background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
+      border-radius: 20px;
+      padding: 40px 36px;
+      border: 2px solid var(--gris-medio);
+      text-align: center;
+    }
+    .particulares-emoji { font-size: 3.5rem; margin-bottom: 16px; }
+    .particulares-visual h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+    .particulares-visual p {
+      color: var(--gris-texto);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .garantias-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+    .garantia-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--negro);
+    }
+    .garantia-item .check {
+      color: #16a34a;
+      font-size: 1rem;
+    }
+
+    /* =============================================
+       TESTIMONIOS
+    ============================================= */
+    #testimonios {
+      padding: 88px 0;
+      background: var(--gris-claro);
+    }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonio-card {
+      background: var(--blanco);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform var(--transition);
+    }
+    .testimonio-card:hover { transform: translateY(-4px); }
+    .stars {
+      color: #F59E0B;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .testimonio-text {
+      font-size: 0.9rem;
+      color: var(--negro);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonio-autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .autor-info strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--azul);
+    }
+    .autor-info span {
+      font-size: 0.78rem;
+      color: var(--gris-texto);
+    }
+    .quote-mark {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 4rem;
+      color: var(--gris-medio);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    /* =============================================
+       GARANTÍA / CONFIANZA
+    ============================================= */
+    #confianza {
+      padding: 80px 0;
+      background: var(--azul);
+    }
+    .confianza-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .confianza-item {
+      text-align: center;
+      padding: 28px 16px;
+    }
+    .confianza-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .confianza-item h4 {
+      color: var(--blanco);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .confianza-item p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       SUCURSALES
+    ============================================= */
+    #sucursales {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+    .sucursales-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .sucursal-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--gris-medio);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .sucursal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--rojo);
+    }
+    .sucursal-header {
+      background: linear-gradient(135deg, var(--azul), var(--azul-medio));
+      padding: 28px 24px 24px;
+      position: relative;
+    }
+    .sucursal-num {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    .sucursal-header h3 {
+      color: var(--blanco);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .sucursal-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+    }
+    .sucursal-body {
+      padding: 24px;
+    }
+    .sucursal-dato {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.875rem;
+      color: var(--negro);
+    }
+    .sucursal-dato:last-of-type { margin-bottom: 20px; }
+    .dato-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-maps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background: var(--gris-claro);
+      border: 2px solid var(--gris-medio);
+      border-radius: 8px;
+      color: var(--azul);
+      font-family: var(--font);
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn-maps:hover {
+      background: var(--azul);
+      color: var(--blanco);
+      border-color: var(--azul);
+    }
+
+    /* =============================================
+       CTA FINAL
+    ============================================= */
+    #cta-final {
+      padding: 96px 0;
+      background: linear-gradient(135deg, #0F172A 0%, var(--azul) 50%, #0F172A 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(217,43,43,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final-content { position: relative; z-index: 2; }
+    #cta-final h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--blanco);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    #cta-final h2 em {
+      font-style: normal;
+      color: #FF6B6B;
+    }
+    #cta-final p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-final-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn-wa-grande {
+      background: var(--verde-wa);
+      color: var(--blanco);
+      font-family: var(--font);
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 20px 44px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: all var(--transition);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.4);
+      text-decoration: none;
+    }
+    .btn-wa-grande:hover {
+      background: var(--verde-wa-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+    }
+    .cta-trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .cta-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+    }
+    .cta-trust-item .check { color: #4ADE80; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    #footer {
+      background: var(--negro);
+      padding: 48px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand img {
+      height: 52px;
+      width: auto;
+      margin-bottom: 14px;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      color: var(--blanco);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      transition: color var(--transition);
+      cursor: default;
+    }
+    .footer-col li a {
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+    .footer-col li a:hover { color: var(--blanco); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.78rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      transition: all var(--transition);
+    }
+    .social-btn:hover {
+      background: var(--rojo);
+      color: var(--blanco);
+    }
+
+    /* =============================================
+       STICKY WHATSAPP BUTTON
+    ============================================= */
+    #sticky-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .sticky-wa-bubble {
+      background: var(--blanco);
+      color: var(--negro);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 100px;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+      animation: bubble-appear 1s ease 1.5s both;
+    }
+    @keyframes bubble-appear {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .sticky-wa-btn {
+      width: 60px;
+      height: 60px;
+      background: var(--verde-wa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: wa-pulse 2.5s ease-in-out 2s infinite;
+    }
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.8); }
+    }
+    .sticky-wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.7);
+    }
+    .sticky-wa-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--blanco);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .nosotros-layout,
+      .empresas-layout,
+      .particulares-layout { grid-template-columns: 1fr; gap: 40px; }
+      .nosotros-visual { order: -1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #menu-toggle { display: flex; }
+      .servicios-grid { grid-template-columns: 1fr; }
+      .empresas-features-grid { grid-template-columns: 1fr; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .confianza-grid { grid-template-columns: repeat(2, 1fr); }
+      .sucursales-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      #sticky-wa { bottom: 0; right: 0; left: 0; align-items: stretch; padding: 12px; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-top: 1px solid var(--gris-medio); box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+      .sticky-wa-bubble { display: none; }
+      .sticky-wa-btn { width: 100%; height: 56px; border-radius: 12px; gap: 12px; font-family: var(--font); font-size: 1rem; font-weight: 800; color: var(--blanco); flex-direction: row; }
+      .sticky-wa-btn::after { content: 'Consultá ahora por WhatsApp'; }
+      body { padding-bottom: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .confianza-grid { grid-template-columns: 1fr; }
+      .cta-final-btns { flex-direction: column; align-items: center; }
+      .pilkington-badge { left: 0; bottom: -16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== TOP URGENCY BANNER ========== -->
+  <div id="urgency-banner">
+    🔥 Servicio a domicilio en tu empresa o depósito
+    <span>·</span>
+    Sin cargo de visita
+    <span>·</span>
+    3 Sucursales en Zona Oeste
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <img src="assets/logo.png" alt="Logo Parabrisas Arana" />
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#empresas">Empresas</a></li>
+        <li><a href="#particulares">Particulares</a></li>
+        <li><a href="#sucursales">Sucursales</a></li>
+        <li>
+          <a href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener" class="btn-nav-wa" id="btn-nav-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Cotizá ahora
+          </a>
+        </li>
+      </ul>
+      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" role="menu">
+      <a href="#nosotros" role="menuitem">Nosotros</a>
+      <a href="#servicios" role="menuitem">Servicios</a>
+      <a href="#empresas" role="menuitem">Empresas de Transporte</a>
+      <a href="#particulares" role="menuitem">Particulares</a>
+      <a href="#sucursales" role="menuitem">Sucursales</a>
+      <a href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener" class="btn-nav-wa" id="btn-mobile-wa">
+        💬 Consultá por WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" aria-labelledby="hero-titulo">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow fade-up">Especialistas en cristales para transporte</div>
+        <h1 id="hero-titulo" class="fade-up delay-1">
+          Tu parabrisas,<br/><em>resuelto hoy.</em>
+        </h1>
+        <p class="hero-sub fade-up delay-2">
+          50 años en el rubro. Zona Oeste GBA. Servicio a domicilio en tu empresa o depósito.
+          Instalamos cristales originales <strong style="color:white">Pilkington</strong> con garantía escrita.
+        </p>
+        <div class="hero-ctas fade-up delay-3">
+          <a href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+un+parabrisas+para+mi+flota" target="_blank" rel="noopener" class="btn-primary" id="btn-hero-wa">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Consultá por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-secondary" id="btn-hero-servicios">
+            Ver servicios ↓
+          </a>
+        </div>
+        <div class="hero-badges fade-up delay-4">
+          <div class="badge"><span class="badge-icon">🏆</span> 50 años de experiencia</div>
+          <div class="badge"><span class="badge-icon">📍</span> 3 sucursales Zona Oeste</div>
+          <div class="badge"><span class="badge-icon">🚚</span> Servicio a domicilio</div>
+          <div class="badge"><span class="badge-icon">✅</span> Cristales Pilkington</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIN POINTS ========== -->
+  <section id="pain" aria-labelledby="pain-titulo">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 48px;">
+        <p class="section-label fade-up">¿Te suena familiar?</p>
+        <h2 id="pain-titulo" class="section-title fade-up delay-1" style="color: white;">Sabemos lo que te frena</h2>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card fade-up">
+          <div class="pain-emoji">🚛</div>
+          <h3>¿Tu camión está parado por un parabrisas roto?</h3>
+          <p>Cada día que tu unidad no circula es dinero que no entra. Un cristal roto no puede esperar semanas.</p>
+          <p class="pain-solution">→ En Arana lo resolvemos en 24–48 hs.</p>
+        </div>
+        <div class="pain-card fade-up delay-1">
+          <div class="pain-emoji">📦</div>
+          <h3>¿Tenés una flota y no podés trasladar el vehículo?</h3>
+          <p>Llevar un camión o colectivo al taller es una operación costosa. No siempre es viable.</p>
+          <p class="pain-solution">→ Nosotros vamos a tu depósito o empresa.</p>
+        </div>
+        <div class="pain-card fade-up delay-2">
+          <div class="pain-emoji">❌</div>
+          <h3>¿Te instalaron un cristal de mala calidad?</h3>
+          <p>Cristales genéricos se agrietan, filtran agua y comprometen la seguridad del conductor.</p>
+          <p class="pain-solution">→ Solo instalamos Pilkington con garantía escrita.</p>
+        </div>
+        <div class="pain-card fade-up delay-3">
+          <div class="pain-emoji">📞</div>
+          <h3>¿No encontrás a nadie que atienda rápido?</h3>
+          <p>Llamás y te dan turnos para la semana que viene. Tu negocio no puede permitirse eso.</p>
+          <p class="pain-solution">→ Cotizamos en el momento, por WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NOSOTROS ========== -->
+  <section id="nosotros" aria-labelledby="nosotros-titulo">
+    <div class="container">
+      <div class="nosotros-layout">
+        <div>
+          <p class="section-label fade-up">Quiénes somos</p>
+          <h2 id="nosotros-titulo" class="section-title fade-up delay-1">50 años resolviendo lo que otros no pueden</h2>
+          <p class="section-sub fade-up delay-2">
+            Somos <strong>Parabrisas Arana</strong>, empresa familiar con más de medio siglo en el rubro automotriz. Nacimos en la Zona Oeste del Gran Buenos Aires y crecimos de la mano del sector transporte y logística. Conocemos cada modelo de camión, colectivo y maquinaria porque los hemos atendido todos.
+          </p>
+          <div class="stats-grid" style="margin-top: 32px;">
+            <div class="stat-card fade-up delay-1">
+              <div class="stat-num">50+</div>
+              <div class="stat-desc">Años de experiencia en el rubro</div>
+            </div>
+            <div class="stat-card fade-up delay-2">
+              <div class="stat-num">3</div>
+              <div class="stat-desc">Sucursales en Zona Oeste GBA</div>
+            </div>
+            <div class="stat-card fade-up delay-3">
+              <div class="stat-num">100%</div>
+              <div class="stat-desc">Cristales originales con garantía</div>
+            </div>
+            <div class="stat-card fade-up delay-4">
+              <div class="stat-num">24h</div>
+              <div class="stat-desc">Tiempo promedio de resolución</div>
+            </div>
+          </div>
+        </div>
+        <div class="nosotros-visual fade-up delay-2">
+          <div class="nosotros-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+              alt="Técnico instalando parabrisas en camión"
+              loading="lazy"
+            />
+          </div>
+          <div class="pilkington-badge">
+            <div class="badge-icon-lg">🛡️</div>
+            <div>
+              <strong>Distribuidores Pilkington</strong>
+              <span>Cristales originales certificados</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICIOS ========== -->
+  <section id="servicios" aria-labelledby="servicios-titulo">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Lo que hacemos</p>
+        <h2 id="servicios-titulo" class="section-title fade-up delay-1">Nuestros servicios</h2>
+        <p class="section-sub fade-up delay-2">Soluciones completas en cristales del automotor para todo tipo de vehículos, desde autos particulares hasta flotas de camiones pesados.</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-card fade-up">
+          <div class="servicio-icon">🚛</div>
+          <h3>Parabrisas para camiones</h3>
+          <p>Cambio e instalación de parabrisas para todo tipo de camión: rígidos, semi, articulados. Marcas: Scania, Volvo, Mercedes, DAF, Iveco y más.</p>
+        </div>
+        <div class="servicio-card fade-up delay-1">
+          <div class="servicio-icon">🚌</div>
+          <h3>Cristales para transporte de pasajeros</h3>
+          <p>Parabrisas y cristales laterales para colectivos, minibuses y furgones de transporte escolar y urbano.</p>
+        </div>
+        <div class="servicio-card fade-up delay-2">
+          <div class="servicio-icon">🚗</div>
+          <h3>Parabrisas para autos</h3>
+          <p>Cambio y reparación de parabrisas para vehículos particulares. Servicio express para que no pierdas el día.</p>
+        </div>
+        <div class="servicio-card fade-up delay-3">
+          <div class="servicio-icon">🌓</div>
+          <h3>Polarizados</h3>
+          <p>Film polarizado homologado para camiones, autos y utilitarios. Reducción de calor, privacidad y protección UV.</p>
+        </div>
+        <div class="servicio-card fade-up delay-1">
+          <div class="servicio-icon">🪞</div>
+          <h3>Espejos a medida</h3>
+          <p>Fabricación e instalación de espejos retrovisores y laterales para todo tipo de vehículo. Medidas estándar y especiales.</p>
+        </div>
+        <div class="servicio-card fade-up delay-2">
+          <div class="servicio-icon">🔧</div>
+          <h3>Reparación de fisuras</h3>
+          <p>Reparación de impactos y fisuras menores sin necesidad de cambiar el parabrisas completo. Solución rápida y económica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== B2B EMPRESAS ========== -->
+  <section id="empresas" aria-labelledby="empresas-titulo">
+    <div class="container">
+      <div class="empresas-layout">
+        <div class="empresas-content">
+          <p class="section-label fade-up" style="color: rgba(255,100,100,0.9);">Para empresas de transporte</p>
+          <h2 id="empresas-titulo" class="section-title fade-up delay-1">¿Tu flota está frenada?</h2>
+          <div class="empresas-quote fade-up delay-2">
+            "Camión parado es dinero perdido. Nosotros lo sabemos mejor que nadie."
+          </div>
+          <p class="section-sub fade-up delay-2" style="margin-bottom: 28px;">
+            En Arana entendemos que cada hora de inactividad impacta directamente en tu negocio. Por eso ofrecemos soluciones diseñadas para empresas de logística y transporte que no pueden permitirse demoras.
+          </p>
+          <ul class="feature-list fade-up delay-3">
+            <li>Servicio a domicilio en tu empresa, depósito o concesionaria</li>
+            <li>Atención prioritaria para flotas — sin espera</li>
+            <li>Contratos de mantenimiento preventivo para toda tu flota</li>
+            <li>Precios mayoristas y facturación a empresa (A y B)</li>
+            <li>Gestión de siniestros con aseguradoras</li>
+            <li>Stock permanente de cristales para principales modelos</li>
+          </ul>
+          <a href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+el+mantenimiento+de+mi+flota" target="_blank" rel="noopener" class="btn-cta-rojo fade-up delay-4" id="btn-empresas-wa">
+            🚛 Cotizá el mantenimiento de tu flota
+          </a>
+        </div>
+        <div class="empresas-features-grid fade-up delay-2">
+          <div class="ef-card">
+            <div class="ef-icon">🏭</div>
+            <h4>Vamos a tu depósito</h4>
+            <p>No pierdas tiempo trasladando vehículos. Nuestro equipo va a tu locación.</p>
+          </div>
+          <div class="ef-card">
+            <div class="ef-icon">⚡</div>
+            <h4>Respuesta en 24–48 hs</h4>
+            <p>Tu flota vuelve a rodar en el menor tiempo posible.</p>
+          </div>
+          <div class="ef-card">
+            <div class="ef-icon">📋</div>
+            <h4>Contrato de flota</h4>
+            <p>Precio fijo mensual, mantenimiento programado, sin sorpresas.</p>
+          </div>
+          <div class="ef-card">
+            <div class="ef-icon">🧾</div>
+            <h4>Factura A y B</h4>
+            <p>Somos monotributistas y responsables inscriptos. Documentación completa.</p>
+          </div>
+          <div class="ef-card">
+            <div class="ef-icon">🛡️</div>
+            <h4>Pilkington certificado</h4>
+            <p>Solo cristales originales. Tu flota cumple con los estándares de seguridad.</p>
+          </div>
+          <div class="ef-card">
+            <div class="ef-icon">📞</div>
+            <h4>Línea directa de flotas</h4>
+            <p>Un contacto exclusivo para empresas. Sin colas, sin turnos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== B2C PARTICULARES ========== -->
+  <section id="particulares" aria-labelledby="particulares-titulo">
+    <div class="container">
+      <div class="particulares-layout">
+        <div>
+          <p class="section-label fade-up">Para particulares</p>
+          <h2 id="particulares-titulo" class="section-title fade-up delay-1">Simple, rápido y cerca tuyo</h2>
+          <p class="section-sub fade-up delay-2">
+            No importa si tenés un auto, camioneta o utilitario. En Parabrisas Arana te atendemos el mismo día en cualquiera de nuestras 3 sucursales en la Zona Oeste.
+          </p>
+          <div class="pasos fade-up delay-2">
+            <div class="paso">
+              <div class="paso-num">1</div>
+              <div class="paso-text">
+                <h4>Consultá sin compromiso</h4>
+                <p>Mandanos un WhatsApp con la foto del daño y el modelo de tu auto. Te cotizamos al instante.</p>
+              </div>
+            </div>
+            <div class="paso">
+              <div class="paso-num">2</div>
+              <div class="paso-text">
+                <h4>Elegí cómo te atendemos</h4>
+                <p>Venís a la sucursal más cercana o, en muchos casos, vamos nosotros. Te acomodamos.</p>
+              </div>
+            </div>
+            <div class="paso">
+              <div class="paso-num">3</div>
+              <div class="paso-text">
+                <h4>En pocas horas, listo</h4>
+                <p>Instalamos tu cristal original con garantía por escrito. Salís manejando el mismo día.</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/5491155556666?text=Hola%2C+quiero+consultar+sobre+el+parabrisas+de+mi+auto" target="_blank" rel="noopener" class="btn-primary" id="btn-particulares-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Consultá ahora por WhatsApp
+          </a>
+        </div>
+        <div class="particulares-visual fade-up delay-3">
+          <div class="particulares-emoji">🚗</div>
+          <h3>¿Por qué elegir Arana?</h3>
+          <p>Porque somos una empresa familiar con 50 años de historia. Cada trabajo lo hacemos como si fuera el nuestro.</p>
+          <div class="garantias-list">
+            <div class="garantia-item"><span class="check">✓</span> Cristales 100% originales (Pilkington)</div>
+            <div class="garantia-item"><span class="check">✓</span> Garantía por escrito en cada trabajo</div>
+            <div class="garantia-item"><span class="check">✓</span> Atención el mismo día en sucursal</div>
+            <div class="garantia-item"><span class="check">✓</span> Cotización gratis, sin turno</div>
+            <div class="garantia-item"><span class="check">✓</span> Técnicos certificados</div>
+            <div class="garantia-item"><span class="check">✓</span> Aceptamos tarjetas y transferencias</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <section id="testimonios" aria-labelledby="testimonios-titulo">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Lo dicen nuestros clientes</p>
+        <h2 id="testimonios-titulo" class="section-title fade-up delay-1">Más de 50 años avalan nuestra reputación</h2>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio-card fade-up">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonio-text">"Tengo una empresa de transporte con 12 camiones. Empecé a trabajar con Arana hace tres años y no los cambio. Vinieron a mi depósito, pusieron los cristales de tres unidades en un día y facturaron todo junto. Impecables."</p>
+          <div class="testimonio-autor">
+            <div class="avatar">MC</div>
+            <div class="autor-info">
+              <strong>Marcelo C.</strong>
+              <span>🚛 Transportista, Merlo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card fade-up delay-1">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonio-text">"El parabrisas de mi auto se rompió un miércoles. Les mandé un WhatsApp con la foto, me cotizaron en 10 minutos, fui el jueves y en dos horas ya estaba listo. Todo original y con garantía. Un diez."</p>
+          <div class="testimonio-autor">
+            <div class="avatar">LG</div>
+            <div class="autor-info">
+              <strong>Laura G.</strong>
+              <span>🚗 Particular, Paso del Rey</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card fade-up delay-2">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonio-text">"Soy despachante y mando a todos mis clientes a Arana. Siempre tuvieron stock, resolvieron rápido y jamás me quedaron mal. El servicio a domicilio para flotas es un diferencial real en la zona oeste."</p>
+          <div class="testimonio-autor">
+            <div class="avatar">RP</div>
+            <div class="autor-info">
+              <strong>Ricardo P.</strong>
+              <span>📋 Despachante, González Catán</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONFIANZA ========== -->
+  <section id="confianza" aria-labelledby="confianza-titulo">
+    <div class="container">
+      <h2 id="confianza-titulo" class="section-title fade-up" style="color: white; text-align: center; margin-bottom: 48px;">
+        Por qué Arana es la elección segura
+      </h2>
+      <div class="confianza-grid">
+        <div class="confianza-item fade-up">
+          <div class="confianza-icon">🏆</div>
+          <h4>50 años en el mercado</h4>
+          <p>Una empresa que lleva medio siglo no engaña. Nuestra trayectoria habla por nosotros.</p>
+        </div>
+        <div class="confianza-item fade-up delay-1">
+          <div class="confianza-icon">🛡️</div>
+          <h4>Solo Pilkington original</h4>
+          <p>No usamos cristales genéricos. Pilkington es la marca líder en el sector transporte.</p>
+        </div>
+        <div class="confianza-item fade-up delay-2">
+          <div class="confianza-icon">📄</div>
+          <h4>Garantía por escrito</h4>
+          <p>Cada trabajo tiene respaldo documental. Si algo falla, lo resolvemos sin costo.</p>
+        </div>
+        <div class="confianza-item fade-up delay-3">
+          <div class="confianza-icon">🧑‍🔧</div>
+          <h4>Técnicos especializados</h4>
+          <p>Nuestro equipo tiene años de experiencia en cristales para vehículos pesados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SUCURSALES ========== -->
+  <section id="sucursales" aria-labelledby="sucursales-titulo">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Siempre cerca tuyo</p>
+        <h2 id="sucursales-titulo" class="section-title fade-up delay-1">Nuestras sucursales</h2>
+        <p class="section-sub fade-up delay-2">3 puntos estratégicos en la Zona Oeste del Gran Buenos Aires para que nunca estés lejos de una solución.</p>
+      </div>
+      <div class="sucursales-grid">
+        <div class="sucursal-card fade-up">
+          <div class="sucursal-header">
+            <div class="sucursal-num">1</div>
+            <h3>Paso del Rey</h3>
+            <p>Casa central</p>
+          </div>
+          <div class="sucursal-body">
+            <div class="sucursal-dato">
+              <span class="dato-icon">📍</span>
+              <span>Bartolomé Mitre 1409, Paso del Rey</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">📞</span>
+              <span>(EJEMPLO: +54 9 11 5555-6666)</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">🕐</span>
+              <span>Lun–Vie 8:00–18:00 · Sáb 8:00–13:00</span>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/Bartolomé+Mitre+1409,+Paso+del+Rey"
+              target="_blank" rel="noopener"
+              class="btn-maps"
+              id="btn-maps-1"
+            >
+              📌 Cómo llegar
+            </a>
+          </div>
+        </div>
+        <div class="sucursal-card fade-up delay-1">
+          <div class="sucursal-header">
+            <div class="sucursal-num">2</div>
+            <h3>González Catán</h3>
+            <p>Sucursal sur</p>
+          </div>
+          <div class="sucursal-body">
+            <div class="sucursal-dato">
+              <span class="dato-icon">📍</span>
+              <span>Juan Manuel de Rosas 18178, González Catán</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">📞</span>
+              <span>(EJEMPLO: +54 9 11 5555-6666)</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">🕐</span>
+              <span>Lun–Vie 8:00–18:00 · Sáb 8:00–13:00</span>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/Juan+Manuel+de+Rosas+18178+González+Catán"
+              target="_blank" rel="noopener"
+              class="btn-maps"
+              id="btn-maps-2"
+            >
+              📌 Cómo llegar
+            </a>
+          </div>
+        </div>
+        <div class="sucursal-card fade-up delay-2">
+          <div class="sucursal-header">
+            <div class="sucursal-num">3</div>
+            <h3>Merlo</h3>
+            <p>Sucursal norte</p>
+          </div>
+          <div class="sucursal-body">
+            <div class="sucursal-dato">
+              <span class="dato-icon">📍</span>
+              <span>Av. Ricardo Balbín 3803, Merlo</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">📞</span>
+              <span>(EJEMPLO: +54 9 11 5555-6666)</span>
+            </div>
+            <div class="sucursal-dato">
+              <span class="dato-icon">🕐</span>
+              <span>Lun–Vie 8:00–18:00 · Sáb 8:00–13:00</span>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/Av.+Ricardo+Balbín+3803+Merlo+Buenos+Aires"
+              target="_blank" rel="noopener"
+              class="btn-maps"
+              id="btn-maps-3"
+            >
+              📌 Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section id="cta-final" aria-labelledby="cta-titulo">
+    <div class="container">
+      <div class="cta-final-content">
+        <p class="section-label fade-up" style="color: rgba(255,100,100,0.8); text-align:center;">No esperés más</p>
+        <h2 id="cta-titulo" class="fade-up delay-1">
+          Tu parabrisas tiene solución.<br/>
+          <em>Consultá ahora, sin cargo.</em>
+        </h2>
+        <p class="fade-up delay-2">
+          Mandanos una foto por WhatsApp y te cotizamos en minutos. Sin turnos, sin esperas, sin compromiso.
+        </p>
+        <div class="cta-final-btns fade-up delay-3">
+          <a
+            href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+un+parabrisas.+%C2%BFMe+pueden+ayudar%3F"
+            target="_blank" rel="noopener"
+            class="btn-wa-grande"
+            id="btn-cta-final"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Escribinos por WhatsApp
+          </a>
+        </div>
+        <div class="cta-trust fade-up delay-4">
+          <div class="cta-trust-item"><span class="check">✓</span> Sin cargo de consulta</div>
+          <div class="cta-trust-item"><span class="check">✓</span> Respondemos al instante</div>
+          <div class="cta-trust-item"><span class="check">✓</span> Presupuesto en minutos</div>
+          <div class="cta-trust-item"><span class="check">✓</span> Sin compromiso de compra</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Logo Parabrisas Arana" />
+          <p>Especialistas en cristales del automotor para el sector transporte y logística. 50 años de trayectoria en la Zona Oeste del Gran Buenos Aires.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li>Parabrisas para camiones</li>
+            <li>Cristales para colectivos</li>
+            <li>Parabrisas para autos</li>
+            <li>Polarizados</li>
+            <li>Espejos a medida</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Paso del Rey</li>
+            <li>González Catán</li>
+            <li>Merlo</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/5491155556666" target="_blank" rel="noopener">WhatsApp (EJEMPLO)</a></li>
+            <li><a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener">@parabrisasarana</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Parabrisas Arana. Todos los derechos reservados.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram de Parabrisas Arana">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/5491155556666" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp de Parabrisas Arana">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== STICKY WHATSAPP ========== -->
+  <div id="sticky-wa" aria-label="Botón de contacto WhatsApp">
+    <div class="sticky-wa-bubble">💬 ¿Necesitás un presupuesto?</div>
+    <a
+      href="https://wa.me/5491155556666?text=Hola%2C+quiero+cotizar+un+parabrisas.+%C2%BFMe+pueden+ayudar%3F"
+      target="_blank"
+      rel="noopener"
+      class="sticky-wa-btn"
+      id="btn-sticky-wa"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+    </a>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // --- Menú mobile ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.display === 'flex';
+      mobileMenu.style.display = isOpen ? 'none' : 'flex';
+      menuToggle.setAttribute('aria-expanded', !isOpen);
+    });
+
+    // Cerrar menú al hacer clic en un link interno
+    mobileMenu.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // --- Fade-in on scroll (IntersectionObserver) ---
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // --- Navbar color al hacer scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 40
+        ? '0 2px 32px rgba(0,0,0,0.35)'
+        : '0 2px 20px rgba(0,0,0,0.25)';
+    });
+
+    // --- Activar primer fade-up del hero inmediatamente ---
+    document.querySelectorAll('#hero .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 120);
+    });
+  </script>
+</body>
+</html>
