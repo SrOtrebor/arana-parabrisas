@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- =============================================
+       SEGURIDAD — Headers de protección
+  ============================================= -->
+  <!-- A-01: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline';
+      font-src 'self';
+      img-src 'self' https://srotrebor.github.io data:;
+      connect-src 'none';
+      frame-src 'none';
+      object-src 'none';
+      base-uri 'self';
+      frame-ancestors 'none';
+    "
+  />
+  <!-- M-01: Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <!-- M-02: Permissions Policy -->
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <!-- B-03: X-Content-Type-Options -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+
+  <!-- =============================================
        SEO PRIMARIO
   ============================================= -->
   <title>Parabrisas Arana | Parabrisas para Camiones y Flotas — Paso del Rey, Merlo, González Catán</title>
@@ -251,9 +277,17 @@
   </script>
 
   <!-- Google Fonts: Poppins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet" />
+  <!-- Fuentes locales Poppins (sin dependencia de Google Fonts) -->
+  <style>
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Poppins'; src: url('assets/fonts/Poppins-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; font-display: swap; }
+  </style>
 
   <style>
     /* =============================================
@@ -442,7 +476,7 @@
       align-items: center;
       background:
         linear-gradient(135deg, rgba(26,47,90,0.93) 0%, rgba(26,47,90,0.75) 60%, rgba(217,43,43,0.3) 100%),
-        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80') center/cover no-repeat;
+        url('assets/hero-bg.jpg') center/cover no-repeat;
       overflow: hidden;
     }
 
@@ -1622,6 +1656,15 @@
       .cta-final-btns { flex-direction: column; align-items: center; }
       .pilkington-badge { left: 0; bottom: -16px; }
     }
+
+    /* Crédito footer */
+    .credito-link {
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .credito-link:hover { color: #fff; }
   </style>
 </head>
 
@@ -1649,7 +1692,7 @@
         <li><a href="#particulares">Particulares</a></li>
         <li><a href="#sucursales">Sucursales</a></li>
         <li>
-          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener" class="btn-nav-wa" id="btn-nav-wa">
+          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" id="btn-nav-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
             Cotizá ahora
           </a>
@@ -1665,7 +1708,7 @@
       <a href="#empresas" role="menuitem">Empresas de Transporte</a>
       <a href="#particulares" role="menuitem">Particulares</a>
       <a href="#sucursales" role="menuitem">Sucursales</a>
-      <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener" class="btn-nav-wa" id="btn-mobile-wa">
+      <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" id="btn-mobile-wa">
         💬 Consultá por WhatsApp
       </a>
     </div>
@@ -1684,7 +1727,7 @@
           Instalamos cristales originales <strong style="color:white">Pilkington</strong> con garantía escrita.
         </p>
         <div class="hero-ctas fade-up delay-3">
-          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas+para+mi+flota" target="_blank" rel="noopener" class="btn-primary" id="btn-hero-wa">
+          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas+para+mi+flota" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-hero-wa">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
             Consultá por WhatsApp
           </a>
@@ -1770,7 +1813,7 @@
         <div class="nosotros-visual fade-up delay-2">
           <div class="nosotros-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+              src="assets/instalacion.jpg"
               alt="Técnico instalando parabrisas en camión"
               loading="lazy"
             />
@@ -1851,7 +1894,7 @@
             <li>Gestión de siniestros con aseguradoras</li>
             <li>Stock permanente de cristales para principales modelos</li>
           </ul>
-          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+el+mantenimiento+de+mi+flota" target="_blank" rel="noopener" class="btn-cta-rojo fade-up delay-4" id="btn-empresas-wa">
+          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+el+mantenimiento+de+mi+flota" target="_blank" rel="noopener noreferrer" class="btn-cta-rojo fade-up delay-4" id="btn-empresas-wa">
             🚛 Cotizá el mantenimiento de tu flota
           </a>
         </div>
@@ -1924,7 +1967,7 @@
               </div>
             </div>
           </div>
-          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+consultar+sobre+el+parabrisas+de+mi+auto" target="_blank" rel="noopener" class="btn-primary" id="btn-particulares-wa">
+          <a href="https://wa.me/5491163830297?text=Hola%2C+quiero+consultar+sobre+el+parabrisas+de+mi+auto" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-particulares-wa">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
             Consultá ahora por WhatsApp
           </a>
@@ -2003,7 +2046,7 @@
           <p class="faq-intro-label">Preguntas frecuentes</p>
           <h2 id="faq-titulo" class="faq-intro-title">Todo lo que necesitás saber antes de llamar</h2>
           <p class="faq-intro-sub">Respondemos las dudas más comunes sobre nuestros servicios, tiempos y cobertura en la Zona Oeste del GBA.</p>
-          <a href="https://wa.me/5491163830297?text=Hola%2C+tengo+una+consulta+sobre+un+parabrisas" target="_blank" rel="noopener" class="faq-cta" id="btn-faq-wa">
+          <a href="https://wa.me/5491163830297?text=Hola%2C+tengo+una+consulta+sobre+un+parabrisas" target="_blank" rel="noopener noreferrer" class="faq-cta" id="btn-faq-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
             Consultá tu caso
           </a>
@@ -2157,7 +2200,7 @@
             </div>
             <a
               href="https://www.google.com/maps/search/Bartolomé+Mitre+1409,+Paso+del+Rey"
-              target="_blank" rel="noopener"
+              target="_blank" rel="noopener noreferrer"
               class="btn-maps"
               id="btn-maps-1"
             >
@@ -2186,7 +2229,7 @@
             </div>
             <a
               href="https://www.google.com/maps/search/Juan+Manuel+de+Rosas+18178+González+Catán"
-              target="_blank" rel="noopener"
+              target="_blank" rel="noopener noreferrer"
               class="btn-maps"
               id="btn-maps-2"
             >
@@ -2215,7 +2258,7 @@
             </div>
             <a
               href="https://www.google.com/maps/search/Av.+Ricardo+Balbín+3803+Merlo+Buenos+Aires"
-              target="_blank" rel="noopener"
+              target="_blank" rel="noopener noreferrer"
               class="btn-maps"
               id="btn-maps-3"
             >
@@ -2242,7 +2285,7 @@
         <div class="cta-final-btns fade-up delay-3">
           <a
             href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas.+%C2%BFMe+pueden+ayudar%3F"
-            target="_blank" rel="noopener"
+            target="_blank" rel="noopener noreferrer"
             class="btn-wa-grande"
             id="btn-cta-final"
           >
@@ -2289,18 +2332,18 @@
         <div class="footer-col">
           <h4>Contacto</h4>
           <ul>
-            <li><a href="https://wa.me/5491163830297" target="_blank" rel="noopener">WhatsApp +54 9 11 6383-0297</a></li>
-            <li><a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener">@parabrisasarana</a></li>
+            <li><a href="https://wa.me/5491163830297" target="_blank" rel="noopener noreferrer">WhatsApp +54 9 11 6383-0297</a></li>
+            <li><a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener noreferrer">@parabrisasarana</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2025 Parabrisas Arana. Todos los derechos reservados.</p>
         <div class="footer-social">
-          <a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram de Parabrisas Arana">
+          <a href="https://instagram.com/parabrisasarana" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram de Parabrisas Arana">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
-          <a href="https://wa.me/5491163830297" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp de Parabrisas Arana">
+          <a href="https://wa.me/5491163830297" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp de Parabrisas Arana">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.054 23.454a.5.5 0 00.608.608l5.618-1.476A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.789-.538-5.354-1.472l-.383-.231-3.979 1.045 1.053-3.855-.249-.396A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
           </a>
         </div>
@@ -2314,7 +2357,7 @@
     <a
       href="https://wa.me/5491163830297?text=Hola%2C+quiero+cotizar+un+parabrisas.+%C2%BFMe+pueden+ayudar%3F"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       class="sticky-wa-btn"
       id="btn-sticky-wa"
       aria-label="Contactar por WhatsApp"
@@ -2327,7 +2370,7 @@
   <div id="credito-estudio" style="background:#0F172A;text-align:center;padding:12px 24px;border-top:1px solid rgba(255,255,255,0.06);">
     <p style="color:rgba(255,255,255,0.35);font-family:'Poppins',sans-serif;font-size:0.75rem;">
       Sitio web desarrollado por
-      <a href="https://estudioprecinto.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);font-weight:600;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+      <a href="https://estudioprecinto.com" target="_blank" rel="noopener noreferrer" class="credito-link">
         Estudio Precinto
       </a>
     </p>
