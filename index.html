@@ -624,6 +624,35 @@
     }
 
     /* =============================================
+       MARCAS
+    ============================================= */
+    #marcas {
+      background: var(--blanco);
+      padding: 32px 0;
+      border-bottom: 1px solid var(--gris-medio);
+      overflow: hidden;
+    }
+    .marcas-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .marca-item {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gris-texto);
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: opacity var(--transition);
+    }
+    .marca-item:hover {
+      opacity: 1;
+    }
+
+    /* =============================================
        PAIN POINTS
     ============================================= */
     #pain {
@@ -845,6 +874,78 @@
       font-size: 0.875rem;
       color: var(--gris-texto);
       line-height: 1.65;
+    }
+
+    .servicio-imagen {
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      display: flex;
+    }
+    .servicio-imagen > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .servicio-imagen:hover img {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .servicio-imagen::after {
+      display: none;
+    }
+
+    /* =============================================
+       GALERÍA
+    ============================================= */
+    #galeria {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .galeria-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .galeria-item:hover img {
+      transform: scale(1.1);
+    }
+    .galeria-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .galeria-item:hover::after {
+      opacity: 1;
+    }
+    @media (max-width: 1024px) {
+      .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .galeria-grid { grid-template-columns: 1fr; }
     }
 
     /* =============================================
@@ -1745,6 +1846,17 @@
     </div>
   </section>
 
+  <!-- ========== MARCAS ========== -->
+  <section id="marcas" aria-label="Marcas con las que trabajamos">
+    <div class="container">
+      <div class="marcas-grid">
+        <span class="marca-item">Pilkington</span>
+        <span class="marca-item">Blindex</span>
+        <span class="marca-item">3M</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== PAIN POINTS ========== -->
   <section id="pain" aria-labelledby="pain-titulo">
     <div class="container">
@@ -1813,7 +1925,7 @@
         <div class="nosotros-visual fade-up delay-2">
           <div class="nosotros-img-wrap">
             <img
-              src="assets/nosotros.png"
+              src="fotos/0a2351cd-9d31-4c79-8259-50f6b7b40653.jpg"
               alt="Técnico instalando parabrisas en camión"
               loading="lazy"
             />
@@ -1844,11 +1956,7 @@
           <h3>Parabrisas para camiones</h3>
           <p>Cambio e instalación de parabrisas para todo tipo de camión: rígidos, semi, articulados. Marcas: Scania, Volvo, Mercedes, DAF, Iveco y más.</p>
         </div>
-        <div class="servicio-card fade-up delay-1">
-          <div class="servicio-icon">🚌</div>
-          <h3>Cristales para transporte de pasajeros</h3>
-          <p>Parabrisas y cristales laterales para colectivos, minibuses y furgones de transporte escolar y urbano.</p>
-        </div>
+
         <div class="servicio-card fade-up delay-2">
           <div class="servicio-icon">🚗</div>
           <h3>Parabrisas para autos</h3>
@@ -1868,6 +1976,53 @@
           <div class="servicio-icon">🔧</div>
           <h3>Reparación de fisuras</h3>
           <p>Reparación de impactos y fisuras menores sin necesidad de cambiar el parabrisas completo. Solución rápida y económica.</p>
+        </div>
+        <div class="servicio-card servicio-imagen fade-up delay-3" style="position: relative;">
+          <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius);">
+            <source src="fotos/videoarana.mp4" type="video/mp4" />
+            Tu navegador no soporta videos.
+          </video>
+          <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(217, 43, 43, 0.4), rgba(15, 23, 42, 0.6)); border-radius: var(--radius); pointer-events: none; z-index: 1;"></div>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 2;">
+            <img src="assets/logo.png" alt="Logo Arana" style="width: 140px; opacity: 0.95; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERÍA ========== -->
+  <section id="galeria" aria-labelledby="galeria-titulo">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Nuestro Trabajo</p>
+        <h2 id="galeria-titulo" class="section-title fade-up delay-1">Galería de Instalaciones</h2>
+        <p class="section-sub fade-up delay-2">Conocé la calidad de nuestro trabajo a través de algunas instalaciones recientes en vehículos de nuestros clientes.</p>
+      </div>
+      <div class="galeria-grid">
+        <div class="galeria-item fade-up">
+          <img src="fotos/242b4d85-7efa-4727-8eda-137f53f53e0f.jpg" alt="Trabajo en taller" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-1">
+          <img src="fotos/2ef05b4e-d44a-4038-88f2-4869cb197ca2.jpg" alt="Instalación de cristales" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-2">
+          <img src="fotos/35da5286-5ef5-4126-b5e5-92baa8de7373.jpg" alt="Parabrisas nuevo" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-3">
+          <img src="fotos/4eb6a5f5-884a-4387-88eb-f216d54f18d9.jpg" alt="Detalle de instalación" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up">
+          <img src="fotos/67036c26-31c8-4de3-bd75-084176f185de.jpg" alt="Vehículo en taller" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-1">
+          <img src="fotos/7086dd07-422d-45d8-8fc2-125e069c7d1e.jpg" alt="Trabajo terminado" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-2">
+          <img src="fotos/92d109b3-f6d9-4519-9f8a-39ebe093ebb6.jpg" alt="Cristal original" loading="lazy" />
+        </div>
+        <div class="galeria-item fade-up delay-3">
+          <img src="fotos/d7622747-5de5-455b-9583-b1f73d90d53c.jpg" alt="Servicio a domicilio" loading="lazy" />
         </div>
       </div>
     </div>
