@@ -639,17 +639,16 @@
       gap: 64px;
       flex-wrap: wrap;
     }
-    .marca-item {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--gris-texto);
-      opacity: 0.5;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: opacity var(--transition);
+    .marca-logo {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.6);
+      transition: filter var(--transition), transform var(--transition);
     }
-    .marca-item:hover {
-      opacity: 1;
+    .marca-logo:hover {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.05);
     }
 
     /* =============================================
@@ -1851,9 +1850,9 @@
   <section id="marcas" aria-label="Marcas con las que trabajamos">
     <div class="container">
       <div class="marcas-grid">
-        <span class="marca-item">Pilkington</span>
-        <span class="marca-item">Blindex</span>
-        <span class="marca-item">3M</span>
+        <img src="fotos/Pilkinson.PNG" alt="Pilkington" class="marca-logo" />
+        <img src="fotos/Blindex.PNG" alt="Blindex" class="marca-logo" />
+        <img src="fotos/3M.PNG" alt="3M" class="marca-logo" />
       </div>
     </div>
   </section>
@@ -2002,28 +2001,28 @@
       </div>
       <div class="galeria-grid">
         <div class="galeria-item fade-up">
-          <img src="fotos/242b4d85-7efa-4727-8eda-137f53f53e0f.jpg" alt="Trabajo en taller" loading="lazy" />
+          <img src="fotos/0a2351cd-9d31-4c79-8259-50f6b7b40653.jpg" alt="Instalación en camión" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-1">
-          <img src="fotos/2ef05b4e-d44a-4038-88f2-4869cb197ca2.jpg" alt="Instalación de cristales" loading="lazy" />
+          <img src="fotos/0e26d219-71a6-4a42-a5b3-468c6412db2c.jpg" alt="Cambio de parabrisas en camión" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-2">
-          <img src="fotos/35da5286-5ef5-4126-b5e5-92baa8de7373.jpg" alt="Parabrisas nuevo" loading="lazy" />
+          <img src="fotos/0f4ec1d6-36e1-46e2-9a4e-52471941dc85.jpg" alt="Detalle de cristal Scania" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-3">
-          <img src="fotos/4eb6a5f5-884a-4387-88eb-f216d54f18d9.jpg" alt="Detalle de instalación" loading="lazy" />
+          <img src="fotos/101b8f27-887a-4348-9197-b0e69c843131.jpg" alt="Camión Scania con parabrisas nuevo" loading="lazy" />
         </div>
         <div class="galeria-item fade-up">
-          <img src="fotos/67036c26-31c8-4de3-bd75-084176f185de.jpg" alt="Vehículo en taller" loading="lazy" />
+          <img src="fotos/1040fad6-83a9-421f-a770-23ceb760c4ed.jpg" alt="Cristales para flotas de camiones" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-1">
-          <img src="fotos/7086dd07-422d-45d8-8fc2-125e069c7d1e.jpg" alt="Trabajo terminado" loading="lazy" />
+          <img src="fotos/196576a3-8f95-4fe4-a2ee-840cb9f21b30.jpg" alt="Mantenimiento de cristales camión" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-2">
-          <img src="fotos/92d109b3-f6d9-4519-9f8a-39ebe093ebb6.jpg" alt="Cristal original" loading="lazy" />
+          <img src="fotos/216f503f-fed0-4776-9b3f-2b38056b8f70.jpg" alt="Reparación en camión Scania" loading="lazy" />
         </div>
         <div class="galeria-item fade-up delay-3">
-          <img src="fotos/d7622747-5de5-455b-9583-b1f73d90d53c.jpg" alt="Servicio a domicilio" loading="lazy" />
+          <img src="fotos/2875e56f-bddd-4e28-857f-7cec0650e0b2.jpg" alt="Trabajo terminado en camión de transporte" loading="lazy" />
         </div>
       </div>
     </div>
